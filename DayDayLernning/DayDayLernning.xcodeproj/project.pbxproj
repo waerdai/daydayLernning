@@ -16,6 +16,7 @@
 		3967FA3D223F4E1700FF329E /* Sort_C.m in Sources */ = {isa = PBXBuildFile; fileRef = 3967FA3C223F4E1700FF329E /* Sort_C.m */; };
 		39C3798322410EFE00D2AA53 /* SingleLinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C3798222410EFE00D2AA53 /* SingleLinkTable.m */; };
 		39C379862241172A00D2AA53 /* DoubleLinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C379852241172A00D2AA53 /* DoubleLinkTable.m */; };
+		39C3798A224254DF00D2AA53 /* AlgorithmProblem.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C37989224254DF00D2AA53 /* AlgorithmProblem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		39C3798222410EFE00D2AA53 /* SingleLinkTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleLinkTable.m; sourceTree = "<group>"; };
 		39C379842241172A00D2AA53 /* DoubleLinkTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoubleLinkTable.h; sourceTree = "<group>"; };
 		39C379852241172A00D2AA53 /* DoubleLinkTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoubleLinkTable.m; sourceTree = "<group>"; };
+		39C37988224254DF00D2AA53 /* AlgorithmProblem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlgorithmProblem.h; sourceTree = "<group>"; };
+		39C37989224254DF00D2AA53 /* AlgorithmProblem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlgorithmProblem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,7 @@
 		3967FA20223F4B4000FF329E /* DayDayLernning */ = {
 			isa = PBXGroup;
 			children = (
+				39C37987224254B000D2AA53 /* AlgorithmProblem */,
 				39C3798022410EDC00D2AA53 /* LinkTable */,
 				3967FA37223F4D0E00FF329E /* Sort */,
 				3967FA21223F4B4000FF329E /* AppDelegate.h */,
@@ -100,6 +104,15 @@
 				39C379852241172A00D2AA53 /* DoubleLinkTable.m */,
 			);
 			path = LinkTable;
+			sourceTree = "<group>";
+		};
+		39C37987224254B000D2AA53 /* AlgorithmProblem */ = {
+			isa = PBXGroup;
+			children = (
+				39C37988224254DF00D2AA53 /* AlgorithmProblem.h */,
+				39C37989224254DF00D2AA53 /* AlgorithmProblem.m */,
+			);
+			path = AlgorithmProblem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +189,7 @@
 				39C379862241172A00D2AA53 /* DoubleLinkTable.m in Sources */,
 				3967FA26223F4B4000FF329E /* ViewController.m in Sources */,
 				3967FA3D223F4E1700FF329E /* Sort_C.m in Sources */,
+				39C3798A224254DF00D2AA53 /* AlgorithmProblem.m in Sources */,
 				3967FA31223F4B4200FF329E /* main.m in Sources */,
 				3967FA23223F4B4000FF329E /* AppDelegate.m in Sources */,
 			);
