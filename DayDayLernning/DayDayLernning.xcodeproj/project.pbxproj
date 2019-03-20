@@ -14,6 +14,8 @@
 		3967FA2E223F4B4200FF329E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3967FA2C223F4B4200FF329E /* LaunchScreen.storyboard */; };
 		3967FA31223F4B4200FF329E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3967FA30223F4B4200FF329E /* main.m */; };
 		3967FA3D223F4E1700FF329E /* Sort_C.m in Sources */ = {isa = PBXBuildFile; fileRef = 3967FA3C223F4E1700FF329E /* Sort_C.m */; };
+		39C3798322410EFE00D2AA53 /* SingleLinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C3798222410EFE00D2AA53 /* SingleLinkTable.m */; };
+		39C379862241172A00D2AA53 /* DoubleLinkTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C379852241172A00D2AA53 /* DoubleLinkTable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		3967FA30223F4B4200FF329E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3967FA3B223F4E1700FF329E /* Sort_C.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sort_C.h; sourceTree = "<group>"; };
 		3967FA3C223F4E1700FF329E /* Sort_C.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sort_C.m; sourceTree = "<group>"; };
+		39C3798122410EFE00D2AA53 /* SingleLinkTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleLinkTable.h; sourceTree = "<group>"; };
+		39C3798222410EFE00D2AA53 /* SingleLinkTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleLinkTable.m; sourceTree = "<group>"; };
+		39C379842241172A00D2AA53 /* DoubleLinkTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoubleLinkTable.h; sourceTree = "<group>"; };
+		39C379852241172A00D2AA53 /* DoubleLinkTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoubleLinkTable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,7 @@
 		3967FA20223F4B4000FF329E /* DayDayLernning */ = {
 			isa = PBXGroup;
 			children = (
+				39C3798022410EDC00D2AA53 /* LinkTable */,
 				3967FA37223F4D0E00FF329E /* Sort */,
 				3967FA21223F4B4000FF329E /* AppDelegate.h */,
 				3967FA22223F4B4000FF329E /* AppDelegate.m */,
@@ -82,6 +89,17 @@
 				3967FA3C223F4E1700FF329E /* Sort_C.m */,
 			);
 			path = Sort;
+			sourceTree = "<group>";
+		};
+		39C3798022410EDC00D2AA53 /* LinkTable */ = {
+			isa = PBXGroup;
+			children = (
+				39C3798122410EFE00D2AA53 /* SingleLinkTable.h */,
+				39C3798222410EFE00D2AA53 /* SingleLinkTable.m */,
+				39C379842241172A00D2AA53 /* DoubleLinkTable.h */,
+				39C379852241172A00D2AA53 /* DoubleLinkTable.m */,
+			);
+			path = LinkTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +172,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39C3798322410EFE00D2AA53 /* SingleLinkTable.m in Sources */,
+				39C379862241172A00D2AA53 /* DoubleLinkTable.m in Sources */,
 				3967FA26223F4B4000FF329E /* ViewController.m in Sources */,
 				3967FA3D223F4E1700FF329E /* Sort_C.m in Sources */,
 				3967FA31223F4B4200FF329E /* main.m in Sources */,
