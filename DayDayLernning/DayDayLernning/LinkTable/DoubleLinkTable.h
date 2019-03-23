@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+// 双向链表
 typedef struct DuLNode
 {
     int data;

@@ -11,17 +11,64 @@
 #import "AlgorithmProblem/AlgorithmProblem.h"
 #import "LinkTable/SingleLinkTable.h"
 
+#import "DemoVC.h"
+#import <WebKit/WebKit.h>
+
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
 
+- (void)dealloc {
+    NSLog(@"ViewController dealloc");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor blueColor];
     
     //singleLink();
+    
+    UIView *view1 = [UIView new];
+    UIView *view2 = [UIView new];
+    [view1 addSubview:view2];
+    [self.view addSubview:view1];
+    
+    printf("maxDepth:%d", maxDepth(self.view));
+    // UIWebView的delegate用assign修饰 是为了兼容非arc环境
+    // WKWebView 的代理换成了 weak
+    
+    // 因为 supper结构体包含 reciever->子类对象 supperclass->父类
+    // supper 说明SEL从父类中的开始查找
+    // class为对象方法
+    NSLog(@"class:%@",[self class]);
+    NSLog(@"supper:%@",[super class]);
+    
+    // 解决三方冲突 封装一层再调用 然后给三方每一个类加上前缀
+    /**
+     粘包： 由于包过小，tcp采用Nagle算法对包合并，就出现了粘包
+     分包：tcp分片传输丢包，导致一个包被分成多个半包，导致多次接收
+     解决方式->1
+        采用/r/n之类的分隔符,作为包的结尾符。出现结尾符则，分割解析，
+        这样如果有粘包就人为分割了。如果没出现分隔符，就认为出现了分包，
+        等待下一个包中出现分隔符，再组合成完整数据包，解析。
+     解决方式->2
+        自定义协议，在包上封装数据包的长度信息headL
+        先解析包长度headL，再根据包长度截取数据包，
+        如果包是错误包，则丢弃
+     解决方式->3
+        消息定长，每次截取定长消息解析
+     */
+}
+
+- (void)test {
+    
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    DemoVC *demoVC = [[DemoVC alloc] init];
+    [self presentViewController:demoVC animated:YES completion:nil];
 }
 
 void singleLink() {

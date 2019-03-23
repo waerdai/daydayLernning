@@ -54,11 +54,11 @@
 
 
 NS_ASSUME_NONNULL_BEGIN
-
+// 单向链表
 typedef struct Node {
     struct Node *next;
     int data;
-}Node;
+}Node, *SigLinkList;
 
 @interface SingleLinkTable : NSObject
 
@@ -84,6 +84,12 @@ Node* getNode(Node *head, int data) ;
 int localOfNode(Node *head, int data) ;
 // 删除元素
 void deleteNode(Node *head, int data) ;
+
+// 清空链表
+void clearLink(Node *head);
+// 销毁链表
+void distroyLink(Node *head);
+
 // 打印元素
 void printfSingleLink(Node *head) ;
 // 反转链表

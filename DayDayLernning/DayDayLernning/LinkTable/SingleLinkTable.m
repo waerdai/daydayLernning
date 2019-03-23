@@ -135,6 +135,26 @@ void printfSingleLink(Node *head) {
     }
 }
 
+// 销毁链表
+void distroyLink(Node *head) {
+    Node *pNode = head;// 用于删除
+    Node *qNode = pNode->next;// 用于驱动
+    
+    while (qNode) {
+        free(pNode);
+        pNode = NULL;
+        
+        pNode = qNode;
+        qNode = qNode->next;
+    }
+}
+
+// 清空链表
+void clearLink(Node *head) {
+    Node *pNode = head->next;// 用于删除
+    distroyLink(pNode);
+}
+
 void reverseLink(Node *head) {
     Node *curNode = head->next;//当前节点
     Node *prevNode = NULL;//前驱节点
