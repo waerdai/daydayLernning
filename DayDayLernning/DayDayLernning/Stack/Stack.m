@@ -15,20 +15,39 @@ void initStack() {
     _linkList = initSingleLinkTable();
 }
 
-void push(Node *pNode) {
-    insertNode(_linkList, pNode);
+void destroy_stack() {
+    if (_linkList == NULL) {
+        return;
+    }
+    distroyLink(_linkList);
 }
 
-Node *pop() {
-    Node *pNode = _linkList->next;
-    _linkList->next = pNode->next;
-    pNode->next = NULL;
-    return pNode;
+void push(LinkNode *pLinkNode) {
+    if (_linkList == NULL) {
+        return;
+    }
+    insertLinkNode(_linkList, pLinkNode);
 }
 
-Node *peek() {
+LinkNode *pop() {
+    if (_linkList == NULL) {
+        return _linkList;
+    }
+    LinkNode *pLinkNode = _linkList->next;
+    _linkList->next = pLinkNode->next;
+    pLinkNode->next = NULL;
+    return pLinkNode;
+}
+
+LinkNode *peek() {
+    if (_linkList == NULL) {
+        return _linkList;
+    }
     return _linkList->next;
 }
 
+bool stack_isEmpty() {
+    return link_isempty(_linkList);
+}
 
 @end

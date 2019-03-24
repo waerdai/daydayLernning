@@ -21,6 +21,8 @@
 		39C3798A224254DF00D2AA53 /* AlgorithmProblem.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C37989224254DF00D2AA53 /* AlgorithmProblem.m */; };
 		39C3798D2242742500D2AA53 /* CirCleLinkList.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C3798C2242742500D2AA53 /* CirCleLinkList.m */; };
 		39C379912242798F00D2AA53 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C379902242798F00D2AA53 /* Stack.m */; };
+		39C49C2222465047001F587A /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C49C2122465047001F587A /* Queue.m */; };
+		39C49C26224666A4001F587A /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C49C25224666A4001F587A /* Tree.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,10 @@
 		39C3798C2242742500D2AA53 /* CirCleLinkList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CirCleLinkList.m; sourceTree = "<group>"; };
 		39C3798F2242798F00D2AA53 /* Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		39C379902242798F00D2AA53 /* Stack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		39C49C2022465047001F587A /* Queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		39C49C2122465047001F587A /* Queue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Queue.m; sourceTree = "<group>"; };
+		39C49C24224666A4001F587A /* Tree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
+		39C49C25224666A4001F587A /* Tree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tree.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +88,9 @@
 		3967FA20223F4B4000FF329E /* DayDayLernning */ = {
 			isa = PBXGroup;
 			children = (
+				39C49C2322466699001F587A /* Tree */,
 				39A5457F2243B85400AB3B5D /* BST */,
+				39C49C1F2246502B001F587A /* Queue */,
 				39C3798E2242797600D2AA53 /* Stack */,
 				39C37987224254B000D2AA53 /* AlgorithmProblem */,
 				39C3798022410EDC00D2AA53 /* LinkTable */,
@@ -149,6 +157,24 @@
 				39C379902242798F00D2AA53 /* Stack.m */,
 			);
 			path = Stack;
+			sourceTree = "<group>";
+		};
+		39C49C1F2246502B001F587A /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				39C49C2022465047001F587A /* Queue.h */,
+				39C49C2122465047001F587A /* Queue.m */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
+		39C49C2322466699001F587A /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				39C49C24224666A4001F587A /* Tree.h */,
+				39C49C25224666A4001F587A /* Tree.m */,
+			);
+			path = Tree;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,9 +247,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39C49C26224666A4001F587A /* Tree.m in Sources */,
 				39C379912242798F00D2AA53 /* Stack.m in Sources */,
 				39C3798322410EFE00D2AA53 /* SingleLinkTable.m in Sources */,
 				39A545852244E00D00AB3B5D /* DemoVC.m in Sources */,
+				39C49C2222465047001F587A /* Queue.m in Sources */,
 				39C379862241172A00D2AA53 /* DoubleLinkTable.m in Sources */,
 				39A545822243B86600AB3B5D /* Bst.m in Sources */,
 				3967FA26223F4B4000FF329E /* ViewController.m in Sources */,

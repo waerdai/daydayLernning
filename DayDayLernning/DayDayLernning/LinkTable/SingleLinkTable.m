@@ -16,8 +16,8 @@
 
  @return head 链表头指针
  */
-Node* initSingleLinkTable() {
-    Node *head = (Node *)malloc(sizeof(Node));
+LinkNode* initSingleLinkTable() {
+    LinkNode *head = (LinkNode *)malloc(sizeof(LinkNode));
     if (head == NULL) {
         printf("初始化链表失败！");
         exit(1);
@@ -28,32 +28,32 @@ Node* initSingleLinkTable() {
 }
 
 // 初始化 节点
-Node* initNode(int data) {
-    Node *node = (Node *)malloc(sizeof(Node));
-    if (node == NULL) {
+LinkNode* initLinkNode(int data) {
+    LinkNode *linkNode = (LinkNode *)malloc(sizeof(LinkNode));
+    if (linkNode == NULL) {
         printf("初始化节点失败！");
         exit(1);
     }
-    node->data = data;
-    node->next = NULL;
-    return node;
+    linkNode->data = data;
+    linkNode->next = NULL;
+    return linkNode;
 }
 
 // 头插法
-void insertNode(Node *head,Node *node) {
+void insertLinkNode(LinkNode *head,LinkNode *LinkNode) {
     if (head == NULL) {
         return;
     }
-    if (node == NULL) {
+    if (LinkNode == NULL) {
         return;
     }
     
-    node->next = head->next;
-    head->next = node;
+    LinkNode->next = head->next;
+    head->next = LinkNode;
 }
 
 // 链表元素个数
-int lengthOfSingleLink(Node *head) {
+int lengthOfSingleLink(LinkNode *head) {
     if (head == NULL) {
         return 0;
     }
@@ -62,7 +62,7 @@ int lengthOfSingleLink(Node *head) {
     }
     
     int num = 0;
-    Node *p = head->next;
+    LinkNode *p = head->next;
     while (p != NULL) {
         num++;
         p = p->next;
@@ -71,13 +71,13 @@ int lengthOfSingleLink(Node *head) {
 }
 
 // 查找 节点
-Node* getNode(Node *head, int data) {
+LinkNode* getLinkNode(LinkNode *head, int data) {
     if (head == NULL) {
         printf("异常");
         exit(1);
     }
     
-    Node *p = head->next;
+    LinkNode *p = head->next;
     while (p != NULL) {
         if (p->data == data) {
             break;
@@ -88,13 +88,13 @@ Node* getNode(Node *head, int data) {
     return p;
 }
 
-int localOfNode(Node *head, int data) {
+int localOfLinkNode(LinkNode *head, int data) {
     if (head == NULL) {
         return -1;
     }
     
     int index = 0;
-    Node *p = head->next;
+    LinkNode *p = head->next;
     while (p != NULL) {
         if (p->data == data) {
             break;
@@ -110,125 +110,137 @@ int localOfNode(Node *head, int data) {
     return index;
 }
 
-void deleteNode(Node *head, int data) {
-    Node *prev = head;
+void deleteLinkNode(LinkNode *head, int data) {
+    LinkNode *prev = head;
     // 寻找当前节点 前驱
     while (prev != NULL && prev->next->data != data) {
         prev = prev->next;
     }
     
-    Node *currentNode = prev->next;
-    if (currentNode != NULL) {
-        prev->next = currentNode->next;
-        free(currentNode);
-        currentNode = NULL;
+    LinkNode *currentLinkNode = prev->next;
+    if (currentLinkNode != NULL) {
+        prev->next = currentLinkNode->next;
+        free(currentLinkNode);
+        currentLinkNode = NULL;
     }
 }
 
-void printfSingleLink(Node *head) {
+bool link_isempty(LinkNode *head) {
+    if (head == NULL) {
+        return YES;
+    }
+    
+    if (head->next == NULL) {
+        return YES;
+    }
+    
+    return NO;
+}
+
+void printfSingleLink(LinkNode *head) {
     printf("链表元素如下\n");
-    Node *p = head->next;
+    LinkNode *p = head->next;
     while (p != NULL) {
-        printf("node->data:%d", p->data);
+        printf("LinkNode->data:%d", p->data);
         printf("\n");
         p = p->next;
     }
 }
 
 // 销毁链表
-void distroyLink(Node *head) {
-    Node *pNode = head;// 用于删除
-    Node *qNode = pNode->next;// 用于驱动
+void distroyLink(LinkNode *head) {
+    LinkNode *pLinkNode = head;// 用于删除
+    LinkNode *qLinkNode = pLinkNode->next;// 用于驱动
     
-    while (qNode) {
-        free(pNode);
-        pNode = NULL;
+    while (qLinkNode) {
+        free(pLinkNode);
+        pLinkNode = NULL;
         
-        pNode = qNode;
-        qNode = qNode->next;
+        pLinkNode = qLinkNode;
+        qLinkNode = qLinkNode->next;
     }
 }
 
 // 清空链表
-void clearLink(Node *head) {
-    Node *pNode = head->next;// 用于删除
-    distroyLink(pNode);
+void clearLink(LinkNode *head) {
+    LinkNode *pLinkNode = head->next;// 用于删除
+    distroyLink(pLinkNode);
 }
 
-void reverseLink(Node *head) {
-    Node *curNode = head->next;//当前节点
-    Node *prevNode = NULL;//前驱节点
-    Node *pHead = NULL;//头节点
+void reverseLink(LinkNode *head) {
+    LinkNode *curLinkNode = head->next;//当前节点
+    LinkNode *prevLinkNode = NULL;//前驱节点
+    LinkNode *pHead = NULL;//头节点
     
-    while (curNode!=NULL) {
-        Node *pNext = curNode->next;
+    while (curLinkNode!=NULL) {
+        LinkNode *pNext = curLinkNode->next;
         if (pNext==NULL) {
-            pHead = curNode;
+            pHead = curLinkNode;
         }
         // 反转链表
-        curNode->next = prevNode;
+        curLinkNode->next = prevLinkNode;
         
         // 驱动迭代
-        prevNode = curNode;
-        curNode = pNext;
+        prevLinkNode = curLinkNode;
+        curLinkNode = pNext;
     }
     head->next = pHead;
 }
 
 // 链表是否有交点
-bool singleLinkIsUnit(Node *head_a,Node *head_b) {
-    Node *pNode = head_a->next;
-    Node *qNode = head_b->next;
+bool singleLinkIsUnit(LinkNode *head_a,LinkNode *head_b) {
+    LinkNode *pLinkNode = head_a->next;
+    LinkNode *qLinkNode = head_b->next;
     
-    while (pNode != NULL) {
-        pNode = pNode->next;
+    while (pLinkNode != NULL) {
+        pLinkNode = pLinkNode->next;
     }
     
-    while (qNode != NULL) {
-        qNode = qNode->next;
+    while (qLinkNode != NULL) {
+        qLinkNode = qLinkNode->next;
     }
     
-    if (pNode == qNode) {
+    if (pLinkNode == qLinkNode) {
         return true;
     }
     return false;
 }
 
 // 返回链表的交点
-Node* getLinkUnitNode(Node *head_a,Node *head_b) {
+LinkNode* getLinkUnitLinkNode(LinkNode *head_a,LinkNode *head_b) {
     int a = lengthOfSingleLink(head_a);
     int b = lengthOfSingleLink(head_b);
     
-    Node *pNode = head_a->next;
-    Node *qNode = head_b->next;
+    LinkNode *pLinkNode = head_a->next;
+    LinkNode *qLinkNode = head_b->next;
     
     int count = abs(b-a);
     if (a > b) {
-        while (count != 0 && pNode != NULL) {
+        while (count != 0 && pLinkNode != NULL) {
             count--;
-            pNode = pNode->next;
+            pLinkNode = pLinkNode->next;
         }
     }
     else if (a < b) {
-        while (count != 0 && qNode != NULL) {
+        while (count != 0 && qLinkNode != NULL) {
             count--;
-            qNode = qNode->next;
+            qLinkNode = qLinkNode->next;
         }
     }
     
-    while (pNode != NULL && qNode != NULL) {
-        if (pNode == qNode) {
+    while (pLinkNode != NULL && qLinkNode != NULL) {
+        if (pLinkNode == qLinkNode) {
             break;
         }
-        pNode = pNode->next;
-        qNode = qNode->next;
+        pLinkNode = pLinkNode->next;
+        qLinkNode = qLinkNode->next;
     }
-    return pNode;
+    return pLinkNode;
 }
 
-Node* getCircleUnitNode(Node *head) {
-    Node *low = head->next;
-    Node *fast = low->next;
+LinkNode* getCircleUnitLinkNode(LinkNode *head) {
+    LinkNode *low = head->next;
+    LinkNode *fast = low->next;
     
     bool isCircle = false;
     while (low!=NULL && fast!=NULL) {
@@ -241,7 +253,7 @@ Node* getCircleUnitNode(Node *head) {
         fast = fast->next->next;
     }
     
-    Node *pHead = NULL;
+    LinkNode *pHead = NULL;
     if (isCircle) {
         pHead = head;
         while (low != pHead) {
@@ -253,10 +265,10 @@ Node* getCircleUnitNode(Node *head) {
     return pHead;
 }
 
-int numitemOfCirclrLink(Node *head) {
+int numitemOfCirclrLink(LinkNode *head) {
     // 求快慢指针 交点
-    Node *low = head->next;
-    Node *fast = low->next;
+    LinkNode *low = head->next;
+    LinkNode *fast = low->next;
     
     bool isCircle = false;
     while (low!=NULL && fast!=NULL) {
@@ -281,9 +293,9 @@ int numitemOfCirclrLink(Node *head) {
     return count;
 }
 
-bool linkIsCircle(Node *head) {
-    Node *low = head->next;
-    Node *fast = low->next;
+bool linkIsCircle(LinkNode *head) {
+    LinkNode *low = head->next;
+    LinkNode *fast = low->next;
     
     bool isCircle = false;
     while (low!=NULL && fast!=NULL) {

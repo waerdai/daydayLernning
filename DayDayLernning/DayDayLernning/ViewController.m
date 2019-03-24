@@ -113,19 +113,19 @@ void singleLink() {
 //    }
     
     // 3.链表有环
-    Node *head = initSingleLinkTable();
-    Node *node_a = NULL;
-    Node *node_b = NULL;
+    LinkNode *head = initSingleLinkTable();
+    LinkNode *node_a = NULL;
+    LinkNode *node_b = NULL;
     
     for (int i = 12; i>0; i--) {
-        Node *pNode = initNode(i);
+        LinkNode *pNode = initLinkNode(i);
         if (i == 12) {
             node_a = pNode;
         }
         if (i == 6) {
             node_b  = pNode;
         }
-        insertNode(head, pNode);
+        insertLinkNode(head, pNode);
     }
     
     //构造 带环链表
@@ -133,7 +133,7 @@ void singleLink() {
     
     if (linkIsCircle(head)) {
         printf("有环\n");
-        Node *circleNode = getCircleUnitNode(head);
+        LinkNode *circleNode = getCircleUnitLinkNode(head);
         printf("链表环交点：%d-元素个数：%d\n",circleNode->data,numitemOfCirclrLink(head));
     }
     else {

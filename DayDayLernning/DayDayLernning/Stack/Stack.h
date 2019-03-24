@@ -9,11 +9,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 // 栈 后进先出
+// base==top 栈空 top-base>=maxsize栈满
 @interface Stack : NSObject
 
-void push(Node *pNode);// 入栈
-Node *pop(void);// 出栈 并删除元素
-Node *peek(void);// 出栈 不删除元素
+// 初始化栈
+void initStack(void);
+
+// 销毁栈
+void destroy_stack(void);
+
+void push(LinkNode *pNode);// 入栈
+LinkNode *pop(void);// 出栈 并删除元素
+LinkNode *peek(void);// 出栈 不删除元素
+
+bool stack_isEmpty(void) ;// 栈为空
 
 @end
 

@@ -21,7 +21,7 @@
  }
  求元素个数
  int count=0;//计数器
- Node *p=low;
+ LinkNode *p=low;
  do
  {
  count++;
@@ -49,16 +49,16 @@
  （3）反转链表
  
  pPrev->指向前一节点
- pNode->指向当前节点
+ pLinkNode->指向当前节点
  */
 
 
 NS_ASSUME_NONNULL_BEGIN
 // 单向链表
-typedef struct Node {
-    struct Node *next;
-    int data;
-}Node, *SigLinkList;
+typedef struct LinkNode {
+    struct LinkNode *next;
+    int data;// 这里用void* 扩展性更高
+}LinkNode, *SigLinkList;
 
 @interface SingleLinkTable : NSObject
 
@@ -68,43 +68,45 @@ typedef struct Node {
  
  @return head 链表头指针
  */
-Node* initSingleLinkTable(void) ;
+LinkNode* initSingleLinkTable(void) ;
 
 // 初始化 节点
-Node* initNode(int data) ;
+LinkNode* initLinkNode(int data) ;
 
 // 头插法
-void insertNode(Node *head,Node *node) ;
+void insertLinkNode(LinkNode *head,LinkNode *LinkNode) ;
 // 链表元素个数
-int lengthOfSingleLink(Node *head) ;
+int lengthOfSingleLink(LinkNode *head) ;
 
 // 查找 节点
-Node* getNode(Node *head, int data) ;
+LinkNode* getLinkNode(LinkNode *head, int data) ;
 // 元素下标
-int localOfNode(Node *head, int data) ;
+int localOfLinkNode(LinkNode *head, int data) ;
 // 删除元素
-void deleteNode(Node *head, int data) ;
+void deleteLinkNode(LinkNode *head, int data) ;
 
 // 清空链表
-void clearLink(Node *head);
+void clearLink(LinkNode *head);
 // 销毁链表
-void distroyLink(Node *head);
+void distroyLink(LinkNode *head);
+// 链表为空
+bool link_isempty(LinkNode *head);
 
 // 打印元素
-void printfSingleLink(Node *head) ;
+void printfSingleLink(LinkNode *head) ;
 // 反转链表
-void reverseLink(Node *head) ;
+void reverseLink(LinkNode *head) ;
 
 // 链表是否有交点
-bool singleLinkIsUnit(Node *head_a,Node *head_b);
+bool singleLinkIsUnit(LinkNode *head_a,LinkNode *head_b);
 // 返回链表的交点
-Node* getLinkUnitNode(Node *head_a,Node *head_b);
+LinkNode* getLinkUnitLinkNode(LinkNode *head_a,LinkNode *head_b);
 // 链表是否有坏
-bool linkIsCircle(Node *head);
+bool linkIsCircle(LinkNode *head);
 // 链表环交点
-Node* getCircleUnitNode(Node *head);
+LinkNode* getCircleUnitLinkNode(LinkNode *head);
 // 带环链表 环上元素个数
-int numitemOfCirclrLink(Node *head);
+int numitemOfCirclrLink(LinkNode *head);
 
 @end
 
