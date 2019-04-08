@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3908708422561B86002D29D3 /* ClassA.m in Sources */ = {isa = PBXBuildFile; fileRef = 3908708322561B86002D29D3 /* ClassA.m */; };
+		3908708722561B99002D29D3 /* ClassB.m in Sources */ = {isa = PBXBuildFile; fileRef = 3908708622561B99002D29D3 /* ClassB.m */; };
+		3908708A22561BAA002D29D3 /* ClassA+Run.m in Sources */ = {isa = PBXBuildFile; fileRef = 3908708922561BAA002D29D3 /* ClassA+Run.m */; };
+		3908708D22561EC8002D29D3 /* ClassB+Run.m in Sources */ = {isa = PBXBuildFile; fileRef = 3908708C22561EC8002D29D3 /* ClassB+Run.m */; };
 		3967FA23223F4B4000FF329E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3967FA22223F4B4000FF329E /* AppDelegate.m */; };
 		3967FA26223F4B4000FF329E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3967FA25223F4B4000FF329E /* ViewController.m */; };
 		3967FA29223F4B4000FF329E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3967FA27223F4B4000FF329E /* Main.storyboard */; };
@@ -26,6 +30,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3908708222561B86002D29D3 /* ClassA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassA.h; sourceTree = "<group>"; };
+		3908708322561B86002D29D3 /* ClassA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassA.m; sourceTree = "<group>"; };
+		3908708522561B99002D29D3 /* ClassB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassB.h; sourceTree = "<group>"; };
+		3908708622561B99002D29D3 /* ClassB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassB.m; sourceTree = "<group>"; };
+		3908708822561BAA002D29D3 /* ClassA+Run.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassA+Run.h"; sourceTree = "<group>"; };
+		3908708922561BAA002D29D3 /* ClassA+Run.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ClassA+Run.m"; sourceTree = "<group>"; };
+		3908708B22561EC8002D29D3 /* ClassB+Run.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassB+Run.h"; sourceTree = "<group>"; };
+		3908708C22561EC8002D29D3 /* ClassB+Run.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ClassB+Run.m"; sourceTree = "<group>"; };
 		3967FA1E223F4B4000FF329E /* DayDayLernning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayDayLernning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3967FA21223F4B4000FF329E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3967FA22223F4B4000FF329E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -69,6 +81,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3908708122561B36002D29D3 /* CatagoryObj */ = {
+			isa = PBXGroup;
+			children = (
+				3908708222561B86002D29D3 /* ClassA.h */,
+				3908708322561B86002D29D3 /* ClassA.m */,
+				3908708522561B99002D29D3 /* ClassB.h */,
+				3908708622561B99002D29D3 /* ClassB.m */,
+				3908708822561BAA002D29D3 /* ClassA+Run.h */,
+				3908708922561BAA002D29D3 /* ClassA+Run.m */,
+				3908708B22561EC8002D29D3 /* ClassB+Run.h */,
+				3908708C22561EC8002D29D3 /* ClassB+Run.m */,
+			);
+			path = CatagoryObj;
+			sourceTree = "<group>";
+		};
 		3967FA15223F4B4000FF329E = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +115,7 @@
 		3967FA20223F4B4000FF329E /* DayDayLernning */ = {
 			isa = PBXGroup;
 			children = (
+				3908708122561B36002D29D3 /* CatagoryObj */,
 				39C49C2322466699001F587A /* Tree */,
 				39A5457F2243B85400AB3B5D /* BST */,
 				39C49C1F2246502B001F587A /* Queue */,
@@ -249,6 +277,7 @@
 			files = (
 				39C49C26224666A4001F587A /* Tree.m in Sources */,
 				39C379912242798F00D2AA53 /* Stack.m in Sources */,
+				3908708D22561EC8002D29D3 /* ClassB+Run.m in Sources */,
 				39C3798322410EFE00D2AA53 /* SingleLinkTable.m in Sources */,
 				39A545852244E00D00AB3B5D /* DemoVC.m in Sources */,
 				39C49C2222465047001F587A /* Queue.m in Sources */,
@@ -256,9 +285,12 @@
 				39A545822243B86600AB3B5D /* Bst.m in Sources */,
 				3967FA26223F4B4000FF329E /* ViewController.m in Sources */,
 				3967FA3D223F4E1700FF329E /* Sort_C.m in Sources */,
+				3908708722561B99002D29D3 /* ClassB.m in Sources */,
 				39C3798A224254DF00D2AA53 /* AlgorithmProblem.m in Sources */,
 				3967FA31223F4B4200FF329E /* main.m in Sources */,
 				3967FA23223F4B4000FF329E /* AppDelegate.m in Sources */,
+				3908708422561B86002D29D3 /* ClassA.m in Sources */,
+				3908708A22561BAA002D29D3 /* ClassA+Run.m in Sources */,
 				39C3798D2242742500D2AA53 /* CirCleLinkList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

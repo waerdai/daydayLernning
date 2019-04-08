@@ -41,6 +41,47 @@ void destroy_bst() {
     
 }
 
+// 插入二叉树 递归版
+bool insert_bstNode(BstTree root,BstTree node) {
+    if (root == NULL) {
+        return false;
+    }
+    if (root->data > node->data) {
+        insert_bstNode(root->lchild, node);
+        return true;
+    }else if (root->data < node->data) {
+        insert_bstNode(root->rchild, node);
+        return true;
+    }
+    return false;
+}
+// 非递归版
+bool insert_bstNode2(BstTree root,BstTree node) {
+    if (root == NULL) {
+        return false;
+    }
+    BstTree present = NULL;
+    BstTree current = root;
+    while (current) {
+        present = current;
+        if (current->data > node->data) {
+            current = current->lchild;
+        }else if (current->data < node->data) {
+            current = current->rchild;
+        }else {
+            return false;
+        }
+    }
+    
+    if (present->data > node->data) {
+        present->lchild = node;
+    }else if (present->data < node->data) {
+        present->rchild = node;
+    }
+    
+    return true;
+}
+
 void visitBst(BstTree p);
 //二叉树的先序遍历算法
 void bstTree_preorder(BstTree p) {
@@ -132,8 +173,6 @@ void bstTree_postorder2(BstTree root) {
         }
     }
 }
-
-
 
 void visitBst(BstTree p) {
     printf("\n");

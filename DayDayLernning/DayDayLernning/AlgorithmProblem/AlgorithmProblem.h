@@ -44,6 +44,11 @@ void reverseString(char *s);
 
 // 反转句子中 每个单词
 void reverseWords(char *s, char *flag);
+// 重复元素的删除
+int deleteDumpElem(int a[], int len);
+// 删除间隔为 margain的元素
+int deleteMargainDumpElem(int a[], int len, int margain);
+int deleteMargainOneSame(int a[], int len);
 
 // 字符串 大数 相加
 - (NSString *)addMaxString:(NSString *)str1 str2:(NSString *)str2;
@@ -52,6 +57,8 @@ void reverseWords(char *s, char *flag);
 int maxDepth(UIView* root);
 // 返回视图 所有子节点
 + (NSArray *)numberOfPlies:(UIView *)view;
+// 最大公共子视图
++ (UIView *)maxPublicView:(UIView *)view1 view2:(UIView *)view2;
 
 @end
 

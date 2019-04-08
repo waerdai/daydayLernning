@@ -242,6 +242,57 @@ void reverseWords(char *s, char *flag) {
     reverseWord(p, s);// 反转 最后一个单词
 }
 
+void deleteArrayItem(int a[], int len, int index) {
+    while (index < len) {
+        a[index] = a[index + 1];
+        index++;
+    }
+}
+
+// 重复元素的删除
+int deleteDumpElem(int a[], int len) {
+    int index = 0;
+    int i = 0;
+    for (; i < len; i++) {
+        if (a[index] != a[i]) {
+            a[++index] = a[i];
+        }
+    }
+    return index + 1;
+}
+
+int deleteMargainDumpElem(int a[], int len, int margain) {
+    if (len <= margain) {
+        return len;
+    }
+    
+    int i = margain;
+    int index = margain;
+    
+    for (; i<len; i++) {
+        if (a[i] != a[index-margain]) {
+            a[index++] = a[i];
+        }
+    }
+    return index;
+}
+
+// 相邻一个数的删除
+int deleteMargainOneSame(int a[], int len) {
+    if (len <= 2) {
+        return len;
+    }
+    
+    int index = 1;
+    int i = 1;
+    for (; i < len; i++) {
+        if (a[i] != a[i - 1]) {
+            a[index++] = a[i];
+        }
+    }
+    return index;
+}
+
 // 求给定视图 层级数
 int maxDepth(UIView* root) {
     if(!root) return 0;
@@ -280,6 +331,27 @@ int maxDepth(UIView* root) {
         [array_m addObject:subView];
         [self numberOfPlies:subView array_m:array_m];
     }
+}
+
++ (UIView *)maxPublicView:(UIView *)view1 view2:(UIView *)view2 {
+    NSMutableArray *viewSuppers1 = [NSMutableArray arrayWithCapacity:0];
+    NSMutableArray *viewSuppers2 = [NSMutableArray arrayWithCapacity:0];
+    
+    while ([view1 superview]) {
+        [viewSuppers1 insertObject:[view1 superview] atIndex:0];
+        view1 = [view1 superview];
+    }
+    while ([view2 superview]) {
+        [viewSuppers2 insertObject:[view2 superview] atIndex:0];
+        view2 = [view2 superview];
+    }
+    
+    NSInteger i = 0;
+    while ([viewSuppers1 objectAtIndex:i] == [viewSuppers2 objectAtIndex:i]) {
+        i++;
+    }
+    
+    return [viewSuppers1 objectAtIndex:i];
 }
 
 @end

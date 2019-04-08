@@ -10,9 +10,13 @@
 #import "Sort/Sort_C.h"
 #import "AlgorithmProblem/AlgorithmProblem.h"
 #import "LinkTable/SingleLinkTable.h"
-
+#import "Tree/Tree.h"
 #import "DemoVC.h"
 #import <WebKit/WebKit.h>
+
+#import "CatagoryObj/ClassA.h"
+#import "CatagoryObj/ClassB.h"
+#import "CatagoryObj/ClassA+Run.m"
 
 @interface ViewController ()
 
@@ -28,7 +32,17 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blueColor];
     
+    
+    ClassA *a = [ClassA new];
+    [a run];
+    
     //singleLink();
+    Trees trees = init_TreeRoot(1);
+    TreeNode *node = init_TreeNode(2);
+    insert_child(trees, node);
+    printf("trees->count:%d", trees->count);
+    
+    return;
     
     UIView *view1 = [UIView new];
     UIView *view2 = [UIView new];
@@ -60,10 +74,6 @@
      解决方式->3
         消息定长，每次截取定长消息解析
      */
-}
-
-- (void)test {
-    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
