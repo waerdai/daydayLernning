@@ -179,4 +179,20 @@ void visitBst(BstTree p) {
     printf("节点为：%d", p->data);
 }
 
+BstTree search_bst(BstTree p, int value) {
+    BstTree pNode = p;
+    while (pNode) {
+        if (value > pNode->data) {
+            pNode = pNode->rchild;
+        }
+        else if (value < pNode->data) {
+            pNode = pNode->lchild;
+        }
+        else {
+            break;
+        }
+    }
+    return pNode;
+}
+
 @end

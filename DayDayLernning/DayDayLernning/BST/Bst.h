@@ -40,6 +40,8 @@ void bstTree_preorder(BstTree p);
 void bstTree_inorder(BstTree p);
 //二叉树的后序遍历
 void bstTree_postorder(BstTree p);
+//二叉树搜索
+BstTree search_bst(BstTree p, int value);
 
 @end
 
