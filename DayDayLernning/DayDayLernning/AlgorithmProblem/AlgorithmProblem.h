@@ -22,9 +22,17 @@ int jiecheng(int n, int m);
 
 // 求x的y次幂
 double x_pow_y(double x,int y);
+/// 求x的y次幂 非递归
+double x_pow_y_2(double x,int y);
+
+/// 求众数 出现次数大于 n/2
+int majority(int a[], int len);
 
 // 不用临时变量 两数交换
 void int__swap(int *a, int *b);
+
+char* isSubString(char *s1,char *s2);
+void printStars(int n);
 
 // 二分查找
 int binarySearch(int a[],int len, int key);

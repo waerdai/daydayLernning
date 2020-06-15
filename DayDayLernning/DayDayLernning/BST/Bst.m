@@ -195,4 +195,20 @@ BstTree search_bst(BstTree p, int value) {
     return pNode;
 }
 
+/// 二叉树最小公共子树
+BstTree lowestCommenAncestor(BstTree root, BstTree p, BstTree q) {
+    while (root) {
+        if (p->data < root->data && q->data < root->data) {
+            root = root->lchild;
+        }
+        else if (p->data > root->data && q->data > root->data) {
+            root = root->rchild;
+        }
+        else {
+            break;
+        }
+    }
+    return root;
+}
+
 @end

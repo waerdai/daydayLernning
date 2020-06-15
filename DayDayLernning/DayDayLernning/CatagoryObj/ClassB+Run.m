@@ -12,7 +12,7 @@
 
 - (void)run {
     [super run];
-    NSLog(@"ClassA (Run)--%@--%@",NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    NSLog(@"ClassB (Run)--%@--%@",NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
 @end

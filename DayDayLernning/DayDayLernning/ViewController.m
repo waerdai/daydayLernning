@@ -33,7 +33,6 @@ int fabo(int n);
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blueColor];
     
-    
     ClassA *a = [ClassA new];
     [a run];
     
@@ -42,6 +41,8 @@ int fabo(int n);
     TreeNode *node = init_TreeNode(2);
     insert_child(trees, node);
     printf("trees->count:%d", trees->count);
+    printf("\n");
+    printStars(3);
     
     return;
     

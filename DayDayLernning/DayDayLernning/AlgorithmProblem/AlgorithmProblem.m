@@ -50,6 +50,51 @@ double x_pow_y(double x,int y) {
     return x*x_pow_y(x, y - 1);
 }
 
+/// 求x的y次幂 非递归
+double x_pow_y_2(double x,int y) {
+    if (x == 0) {
+        return 0;
+    }
+    
+    if (y < 0) {
+        x = 1/(double)x;
+        y = abs(y);
+    }
+    
+    double pow = 1;
+    while (y > 0) {
+        pow *= x;
+        y--;
+    }
+    return pow;
+}
+
+/// 求众数 出现次数大于 n/2
+/// return -1表示没有
+int majority(int a[], int len) {
+    int count = 0;/// 负责统计次数
+    int value = 0;/// 负责存储众数
+    
+    for (int i = 0; i < len; i++) {
+        if (count == 0) {
+            value = a[i];
+            count = 1;
+        }
+        else if (value == a[i]) {
+            count++;
+        }
+        else {
+            count--;
+        }
+    }
+    
+    if (count == 0) {
+        return -1;/// 没有众数
+    }
+    
+    return value;
+}
+
 // 不用临时变量 两数交换
 void int__swap(int *a, int *b) {
     if (a == NULL || b == NULL) {
@@ -70,6 +115,65 @@ void char_swap(char *a, char *b) {
     *a = *a^*b;
     *b = *a^*b;
     *a = *a^*b;
+}
+
+/// 若s2为s1的子串
+/// 返回 s1中s2的首字母
+char* isSubString(char *s1,char *s2) {
+    char *p = NULL;/// 存储首字母
+    /// q/temp负责驱动
+    char *q = NULL;
+    char *temp = NULL;
+    
+    while (*s1 != '\0') {
+        if (*s1 == *s2) {
+            p = s1;
+            q = s1;
+            temp = s2;
+            while (*temp != '\0') {
+                if (*q != *temp) {
+                    p = NULL;
+                    break;
+                }
+                q++;
+                temp++;
+            }
+        }
+        
+        if (p != NULL) {
+            break;
+        }
+        
+        s1++;
+    }
+    return p;
+}
+
+void printStars(int n) {
+    int i = 1;
+    int j = 0;
+    for (; i <= n; i++) {
+        /// 对于i行 空格数为 n-i
+        for (j = 1; j <= n - i; j++) {
+            printf(" ");
+        }
+        /// 对于i行 星数为 2*i - 1
+        for (j = 1; j <= 2*i - 1;j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    
+    for (i = n - 1;i >= 1; i--) {
+        for (j = 1; j <= n - i; j++) {
+            printf(" ");
+        }
+        for (j = 1; j <= 2*i - 1 ; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    
 }
 
 // 二分查找

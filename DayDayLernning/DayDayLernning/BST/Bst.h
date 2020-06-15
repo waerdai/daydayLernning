@@ -43,6 +43,9 @@ void bstTree_postorder(BstTree p);
 //二叉树搜索
 BstTree search_bst(BstTree p, int value);
 
+/// 二叉树最小公共子树
+BstTree lowestCommenAncestor(BstTree root, BstTree p, BstTree q);
+
 @end
 
 NS_ASSUME_NONNULL_END
